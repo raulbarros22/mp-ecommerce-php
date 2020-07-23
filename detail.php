@@ -53,7 +53,7 @@ $preference->back_url = array(
     "failure" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/failure.php"
 );
 /* $preference->notification_url = "https://raulbarros22-mp-ecommerce-php.herokuapp.com/notification.php"; */
-/* $preference->payer = array(
+$preference->payer = (object) array(
     "name" => "Lalo",
     "surname" => "Landa",
     "email" => "test_user_63274575@testuser.com",
@@ -66,7 +66,7 @@ $preference->back_url = array(
         "street_number" => 123,
         "zip_code" => "1234"
     )
-); */
+);
 
 
 $preference->save();
