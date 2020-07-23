@@ -52,7 +52,7 @@ $preference->back_url = array(
     "success" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/success.php",
     "failure" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/failure.php"
 );
-$preference->notification_url = "https://raulbarros22-mp-ecommerce-php.herokuapp.com/notification.php";
+/* $preference->notification_url = "https://raulbarros22-mp-ecommerce-php.herokuapp.com/notification.php"; */
 $preference->payer = array(
     "name" => "Lalo",
     "surname" => "Landa",
