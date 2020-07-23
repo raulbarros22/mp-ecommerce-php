@@ -19,6 +19,7 @@ $payment->save();
 echo $payment->status; */
 ?>
 <?php
+
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
 
@@ -38,8 +39,12 @@ $preference->payment_methods = array(
 );
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
+$item->id = "1234";
 $item->title = $_POST['title'];
+$item->description = "Dispositivo móvil de Tienda e-commerce";
+$item->picture_url = "./assets/003.jpg";
 $item->quantity = 1;
+$item->currency_id = $POST['unit'];
 $item->unit_price = $_POST['price'];
 $preference->items = array($item);
 $preference->save();
@@ -52,10 +57,18 @@ $payment->description = "Ergonomic Silk Shirt";
 $payment->installments = 1;
 $payment->payment_method_id = "visa"; */
 $payment->payer = array(
-    "first_name" => "Lalo",
-    "last_name" => "Landa",
+    "name" => "Lalo",
+    "surname" => "Landa",
     "email" => "test_user_63274575@testuser.com",
-
+    "phone" => array(
+        "area_code" => "11",
+        "phone" => "22223333"
+    ),
+    "address" => array(
+        "street_name" => "False",
+        "street_number" => 123,
+        "zip_code" => "1234"
+    ),
 );
 
 $payment->save();
