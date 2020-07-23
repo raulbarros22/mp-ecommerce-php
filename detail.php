@@ -43,6 +43,22 @@ $item->quantity = 1;
 $item->unit_price = $_POST['price'];
 $preference->items = array($item);
 $preference->save();
+
+$payment = new MercadoPago\Payment();
+
+/* $payment->transaction_amount = 141;
+$payment->token = "YOUR_CARD_TOKEN";
+$payment->description = "Ergonomic Silk Shirt";
+$payment->installments = 1;
+$payment->payment_method_id = "visa"; */
+$payment->payer = array(
+    "first_name" => "Lalo",
+    "last_name" => "Landa",
+    "email" => "test_user_63274575@testuser.com",
+
+);
+
+$payment->save();
 ?>
 
 
