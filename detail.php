@@ -24,7 +24,7 @@ echo $payment->status; */
 require __DIR__ .  '/vendor/autoload.php';
 
 // Agrega credenciales
-MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
+MercadoPago\SDK::setAccessToken('TEST-7796287116492122-072303-fdc8908792638e6c6d9118f64a2afdf4-614084063');
 
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
@@ -46,13 +46,14 @@ $item->picture_url = "./assets/003.jpg";
 $item->quantity = 1;
 $item->currency_id = $POST['unit'];
 $item->unit_price = $_POST['price'];
+$preference->items = array($item);
 
 $preference->back_url = array(
     "success" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/success.php",
     "failure" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/failure.php"
 );
 $preference->notification_url = "https://raulbarros22-mp-ecommerce-php.herokuapp.com/notification.php";
-$preference->payer = array(
+/* $preference->payer = array(
     "name" => "Lalo",
     "surname" => "Landa",
     "email" => "test_user_63274575@testuser.com",
@@ -65,9 +66,9 @@ $preference->payer = array(
         "street_number" => 123,
         "zip_code" => "1234"
     )
-);
+); */
 
-$preference->items = array($item);
+
 $preference->save();
 
 /* $payment = new MercadoPago\Payment(); */
