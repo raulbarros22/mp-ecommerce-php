@@ -1,24 +1,4 @@
 <?php
-/* require_once 'vendor/autoload.php'; // You have to require the library from your Composer vendor folder
-
-MercadoPago\SDK::setAccessToken("TEST-7796287116492122-072303-fdc8908792638e6c6d9118f64a2afdf4-614084063"); // Either Production or SandBox AccessToken
-
-$payment = new MercadoPago\Payment();
-
-$payment->transaction_amount = 141;
-$payment->token = "YOUR_CARD_TOKEN";
-$payment->description = "Ergonomic Silk Shirt";
-$payment->installments = 1;
-$payment->payment_method_id = "visa";
-$payment->payer = array(
-    "email" => "larue.nienow@email.com"
-);
-
-$payment->save();
-
-echo $payment->status; */
-?>
-<?php
 
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
@@ -26,9 +6,7 @@ require __DIR__ .  '/vendor/autoload.php';
 // Agrega credenciales
 MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
 
-
 MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
-
 
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
@@ -41,6 +19,7 @@ $preference->payment_methods = array(
     ),
     "installments" => 6
 );
+
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
 $item->id = "1234";
@@ -60,12 +39,8 @@ $preference->back_urls = array(
 );
 /* $preference->auto_return = "approved"; */
 
-
-/* $preference->back_url = array(
-    "success" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/success.php",
-    "failure" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/failure.php"
-); */
 $preference->notification_url = "https://raulbarros22-mp-ecommerce-php.herokuapp.com/notification.php";
+$preference->external_reference = "ABC";
 
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
@@ -88,48 +63,7 @@ $payer->address = array(
     "zip_code" => "1234"
 );
 
-
-/* $preference->payer = (object) array(
-    "name" => "Lalo",
-    "surname" => "Landa",
-    "email" => "test_user_63274575@testuser.com",
-    "phone" => array(
-        "area_code" => "11",
-        "phone" => "22223333"
-    ),
-    "address" => array(
-        "street_name" => "False",
-        "street_number" => 123,
-        "zip_code" => "1234"
-    )
-); */
-
-
 $preference->save();
-
-/* $payment = new MercadoPago\Payment(); */
-
-/* $payment->transaction_amount = 141;
-$payment->token = "YOUR_CARD_TOKEN";
-$payment->description = "Ergonomic Silk Shirt";
-$payment->installments = 1;
-$payment->payment_method_id = "visa"; */
-/* $payment->payer = array(
-    "name" => "Lalo",
-    "surname" => "Landa",
-    "email" => "test_user_63274575@testuser.com",
-    "phone" => array(
-        "area_code" => "11",
-        "phone" => "22223333"
-    ),
-    "address" => array(
-        "street_name" => "False",
-        "street_number" => 123,
-        "zip_code" => "1234"
-    ),
-);
-
-$payment->save(); */
 ?>
 
 
