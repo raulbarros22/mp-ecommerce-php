@@ -33,8 +33,8 @@ $preference->items = array($item);
 
 
 $preference->back_urls = array(
-    "success" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/success.php",
-    "failure" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/failure.php",
+    "success" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/success.php?%",
+    "failure" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/failure.php?%",
     "pending" => "http://www.tu-sitio/pending"
 );
 $preference->auto_return = "all";
