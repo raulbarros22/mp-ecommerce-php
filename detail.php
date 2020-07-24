@@ -25,19 +25,19 @@ $item = new MercadoPago\Item();
 $item->id = "1234";
 $item->title = $_POST['title'];
 $item->description = "Dispositivo móvil de Tienda e-commerce";
-$item->picture_url = "./assets/003.jpg";
+$item->picture_url = "https://raulbarros22-mp-ecommerce-php.herokuapp.com/assets/003.jpg";
 $item->quantity = 1;
 $item->currency_id = $POST['unit'];
 $item->unit_price = $_POST['price'];
 $preference->items = array($item);
 
 
-$preference->back_urls = array(
+/* $preference->back_urls = array(
     "success" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/success.php",
     "failure" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/failure.php",
     "pending" => "http://www.tu-sitio/pending"
-);
-/* $preference->auto_return = "approved"; */
+); */
+$preference->auto_return = "approved";
 
 $preference->notification_url = "https://raulbarros22-mp-ecommerce-php.herokuapp.com/notification.php";
 $preference->external_reference = "ABC";
