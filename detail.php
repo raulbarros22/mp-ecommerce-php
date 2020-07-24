@@ -52,21 +52,20 @@ $item->currency_id = $POST['unit'];
 $item->unit_price = $_POST['price'];
 $preference->items = array($item);
 
-$preference = new MercadoPago\Preference();
-//...
-/* $preference->back_urls = array(
+
+$preference->back_urls = array(
     "success" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/success.php",
     "failure" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/failure.php",
     "pending" => "http://www.tu-sitio/pending"
-); */
-$preference->auto_return = "approved";
+);
+/* $preference->auto_return = "approved"; */
 
 
 /* $preference->back_url = array(
     "success" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/success.php",
     "failure" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/failure.php"
 ); */
-/* $preference->notification_url = "https://raulbarros22-mp-ecommerce-php.herokuapp.com/notification.php"; */
+$preference->notification_url = "https://raulbarros22-mp-ecommerce-php.herokuapp.com/notification.php";
 
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
