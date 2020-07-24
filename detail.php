@@ -32,12 +32,12 @@ $item->unit_price = $_POST['price'];
 $preference->items = array($item);
 
 
-/* $preference->back_urls = array(
+$preference->back_urls = array(
     "success" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/success.php",
     "failure" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/failure.php",
     "pending" => "http://www.tu-sitio/pending"
-); */
-/* $preference->auto_return = "approved"; */
+);
+$preference->auto_return = "all";
 
 $preference->notification_url = "https://raulbarros22-mp-ecommerce-php.herokuapp.com/notification.php";
 $preference->external_reference = "ABC";
