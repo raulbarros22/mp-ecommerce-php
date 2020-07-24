@@ -37,7 +37,7 @@ $preference->items = array($item);
     "failure" => "https://raulbarros22-mp-ecommerce-php.herokuapp.com/failure.php",
     "pending" => "http://www.tu-sitio/pending"
 ); */
-$preference->auto_return = "approved";
+/* $preference->auto_return = "approved"; */
 
 $preference->notification_url = "https://raulbarros22-mp-ecommerce-php.herokuapp.com/notification.php";
 $preference->external_reference = "ABC";
